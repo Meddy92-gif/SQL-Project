@@ -129,9 +129,9 @@ ORDER BY Planet.Name, Package.Weight
 -- 7.6 Retrieve the names of employees who have shipped packages to planets that no other employee has shipped to.
 
 
--- 7.7 Retrieve the names of planets along with the number of shipments made to each planet, but exclude planets where the total weight of 
---packages sent is less than 20 units.
-SELECT Planet.Name FROM Planet
+-- 7.7 Retrieve the names of planets along with the number of shipments made to each planet, but exclude planets where the total weight of 
+--packages sent is less than 20 units.
+SELECT Planet.Name FROM Planet
 
 
 
