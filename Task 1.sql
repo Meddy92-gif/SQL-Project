@@ -1,5 +1,4 @@
-## Tables with data
-''''sql
+-- Tables with data
 (
   Code INTEGER,
   Name TEXT NOT NULL,
@@ -13,6 +12,8 @@ CREATE TABLE IF NOT EXISTS Products (
   Manufacturer INTEGER NOT NULL,
   PRIMARY KEY (Code)
 );
+
+-- Table population
 
 INSERT INTO Manufacturers(Code,Name) VALUES(1,'Sony');
 INSERT INTO Manufacturers(Code,Name) VALUES(2,'Creative Labs');
@@ -30,12 +31,10 @@ INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
 INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
 INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
 INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);</sql><sql name="SQL 2">
+INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
 
-''''sql
 
-## SQL Queries with solutions
-''''sql
+-- SQL Queries with solutions
 
 -- 1.1 Select the names of all the products in the store.
 SELECT Name FROM Products;
