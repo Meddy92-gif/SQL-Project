@@ -116,34 +116,30 @@ FROM Products;
 SELECT max(Price), Manufacturers.Name FROM Products
 JOIN Manufacturers ON Products.Code = Manufacturers.Code
 ````
+#### 1.17 Add a new product: Loudspeakers, $70, manufacturer 2.
+````sql
+INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'Loudspeakers',70,2);
+````
+
 #### 1.18 Update the name of product 8 to &quot;Laser Printer&quot;.
 ````sql
 UPDATE Products SET Name = 'Laser Printer'
 WHERE Code = 8;
 ````
 
--- 1.19 Apply a 10% discount to all products.
-
-
-
-
-
--- 1.14 Select the names of manufacturer whose products have an average price larger than or equal to $150.
-SELECT Price, Manufacturers.Name FROM Products
-JOIN Manufacturers ON Products.Code = Manufacturers.Code
-WHERE Price &gt;= 150
-GROUP BY Price
-HAVING avg(Price);
-
--- 1.16 Select the name of each manufacturer along with the name and price of its most expensive product.
-SELECT max(Price), Manufacturers.Name FROM Products
-JOIN Manufacturers ON Products.Code = Manufacturers.Code;
-
--- 1.17 Add a new product: Loudspeakers, $70, manufacturer 2.
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'Loudspeakers',70,2);
-
--- 1.18 Update the name of product 8 to &quot;Laser Printer&quot;.
-UPDATE Products SET Name = 'Laser Printer'
-WHERE Code = 8;
-
-</sql><current_tab id="1"/></tab_sql></sqlb_project>
+#### 1.19 Apply a 10% discount to all products.
+````sql
+SELECT Name, Price, Price * 0.9 AS discounted_price 
+FROM Products;
+````
+*Here I want to preview the prices first, before updating the column in the database* 
+````sql
+UPDATE Products 
+--SET Price = Price * 0.9;
+````
+#### 1.20 Apply a 10% discount to all products with a price larger than or equal to $120.
+````sql
+SELECT Name, Price, Price * 0.9 AS discounted_price
+FROM Products
+WHERE Price >= 120;
+````
